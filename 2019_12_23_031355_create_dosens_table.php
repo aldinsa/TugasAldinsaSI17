@@ -14,14 +14,15 @@
      public function up() 
      { 
          Schema::create('dosens', function (Blueprint $table) { 
-             $table->bigIncrements('id'); 
+       	     $table->bigIncrements('id'); 
              $table->char('id_dosen', 15) ->unique(); 
-             $table->string('nama', 150); 
-	     $table->char('no_hp', 12);  
-             $table->date('tgl_lahir'); 
-             $table->char('jenis_kelamin', 1); 
-			 
-             $table->timestamps(); 
+             $table->string('nama', 150);
+	     $table->char('tempat_lahir', 50);
+	     $table->date('tgl_lahir');
+	     $table->char('no_hp', 12);
+	     $table->date('alamat');
+	     $table->char('jenis_kelamin', 1);
+	     $table->timestamps(); 
          }); 
      } 
   
@@ -35,3 +36,6 @@
          Schema::dropIfExists('dosens'); 
      } 
  } 
+             
+			 
+
